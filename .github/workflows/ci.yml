@@ -27,5 +27,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Start CI
-        run: echo "CI Started"
+      - name: run python tests
+        run: actions/checkout@v7
+
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Run tests
+        run: python -m pytest -v
