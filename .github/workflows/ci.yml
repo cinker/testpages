@@ -12,8 +12,8 @@ on:
     branches:
       - main
     paths:
-      - *.py
-      - requirements.txt
+      - "*.py"
+      - "requirements.txt"
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * 1"
