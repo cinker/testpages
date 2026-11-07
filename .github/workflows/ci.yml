@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: run python tests
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: set up python
         uses: actions/setup-python@v5
