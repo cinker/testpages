@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - *.py
+      - requirements.txt
+  pull_request:
+    branches:
+      - main
+    paths:
+      - *.py
+      - requirements.txt
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1
+        run: |
+          echo "CI Started"
+      
